@@ -1,0 +1,23 @@
+{
+  "name": "liri-node",
+  "version": "1.0.0",
+  "description": "A command line node app that takes in parameters and gives you back data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlouie10/liri-node.git"
+  },
+  "keywords": [
+    "liri",
+    "node"
+  ],
+  "author": "Justin Louie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlouie10/liri-node/issues"
+  },
+  "homepage": "https://github.com/jlouie10/liri-node#readme"
+}
