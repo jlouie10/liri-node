@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jlouie10/liri-node/issues"
   },
-  "homepage": "https://github.com/jlouie10/liri-node#readme"
+  "homepage": "https://github.com/jlouie10/liri-node#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
