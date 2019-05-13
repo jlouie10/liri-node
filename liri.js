@@ -28,10 +28,10 @@ switch (command) {
 }
 
 function concertThis(artist) {
-    const url = 'https://rest.bandsintown.com/';
-    const appId = '';
+    const url = 'https://rest.bandsintown.com';
+    const appId = 'codingbootcamp';
     let artistEnc = artist.replace(' ', '%20');
-    let artistUrl = url + 'artists/' + artistEnc + '/?app_id=' + appId;
+    let artistUrl = url + '/artists/' + artistEnc + '/?app_id=' + appId;
 
     axios.get(artistUrl)
         .then(function (response) {
@@ -41,8 +41,7 @@ function concertThis(artist) {
                 console.log('Your concert-this request could not find ' + artist + '.');
             }
             else {
-                let artistName = response.data.name;
-                let eventsUrl = url + 'artists/' + artistEnc + '/events/?app_id=' + appId;
+                let eventsUrl = url + '/artists/' + artistEnc + '/events/?app_id=' + appId;
 
                 axios.get(eventsUrl)
                     .then(function (response) {
