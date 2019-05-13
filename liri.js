@@ -3,7 +3,7 @@
 // var keys = require("./keys.js");
 
 // var spotify = new Spotify(keys.spotify);
-
+const moment = require('moment');
 const axios = require("axios");
 
 let input = process.argv;
@@ -53,7 +53,7 @@ function concertThis(artist) {
                                 console.log('Artist: ' + artistName);
                                 console.log('Venue: ' + element.venue.name);
                                 console.log('Location: ' + element.venue.city + ', ' + element.venue.region);
-                                console.log('Date: ' + element.datetime);
+                                console.log('Date: ' + moment(element.datetime).format('MM/DD/YYYY'));
                             });
                         }
                         else {

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jlouie10/liri-node#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "moment": "^2.24.0"
   }
 }
