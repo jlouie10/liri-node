@@ -12,7 +12,6 @@ let arg = input.slice(3).join(' ');
 
 switch (command) {
     case 'concert-this':
-        console.log('Your concert-this results:')
         concertThis(arg);
         break;
     case 'spotify-this-song':
@@ -29,20 +28,44 @@ switch (command) {
 }
 
 function concertThis(artist) {
+    const url = 'https://rest.bandsintown.com/';
     const appId = '';
     let artistEnc = artist.replace(' ', '%20');
-    let queryUrl = 'https://rest.bandsintown.com/artists/' + artistEnc + '/events?app_id=' + appId;
+    let artistUrl = url + 'artists/' + artistEnc + '/?app_id=' + appId;
 
-    axios.get(queryUrl)
+    axios.get(artistUrl)
         .then(function (response) {
-            response.data.forEach(element => {
-                console.log('\nArtist: ' + artist);
-                console.log('Venue: ' + element.venue.name);
-                console.log('Location: ' + element.venue.city + ', ' + element.venue.region);
-                console.log('Date: ' + element.datetime + '\n');
-            });
+            let artistName = response.data.name;
+
+            if (artistName === undefined) {
+                console.log('Your concert-this request could not find ' + artist + '.');
+            }
+            else {
+                let artistName = response.data.name;
+                let eventsUrl = url + 'artists/' + artistEnc + '/events/?app_id=' + appId;
+
+                axios.get(eventsUrl)
+                    .then(function (response) {
+                        if (response.data.length > 0) {
+                            console.log('Your concert-this results:\n')
+
+                            response.data.forEach(element => {
+                                console.log('Artist: ' + artistName);
+                                console.log('Venue: ' + element.venue.name);
+                                console.log('Location: ' + element.venue.city + ', ' + element.venue.region);
+                                console.log('Date: ' + element.datetime);
+                            });
+                        }
+                        else {
+                            console.log('Your concert-this request could not find events for ' + artistName + '.');
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log('Your concert-this request could not be completed. ' + error);
+                    });
+            }
         })
         .catch(function (error) {
-            console.log(error);
+            console.log('Your concert-this request could not be completed. ' + error);
         });
 }
