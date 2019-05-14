@@ -28,13 +28,11 @@ switch (command) {
         console.log('Error');
 }
 
+// Fetches artist name from search term and then fetches concert information
 function concertThis(artist) {
-    const url = 'https://rest.bandsintown.com';
-    const appId = 'codingbootcamp';
-    let artistEnc = artist.replace(' ', '%20');
-    let artistUrl = url + '/artists/' + artistEnc + '/?app_id=' + appId;
+    let queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/?app_id=codingbootcamp';
 
-    axios.get(artistUrl)
+    axios.get(queryUrl)
         .then(function (response) {
             let artistName = response.data.name;
 
@@ -42,9 +40,9 @@ function concertThis(artist) {
                 console.log('Your concert-this request could not find ' + artist + '.');
             }
             else {
-                let eventsUrl = url + '/artists/' + artistEnc + '/events/?app_id=' + appId;
+                queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/events/?app_id=codingbootcamp';
 
-                axios.get(eventsUrl)
+                axios.get(queryUrl)
                     .then(function (response) {
                         if (response.data.length > 0) {
                             console.log('Your concert-this results:')
@@ -70,6 +68,7 @@ function concertThis(artist) {
         });
 }
 
+// Fetches song information from Spotify
 function spotifyThisSong(song) {
     spotify.search({ type: 'track', query: song }, function(err, data) {
         if (err) {
