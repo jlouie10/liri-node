@@ -29,54 +29,50 @@ switch (command) {
         console.log('Error');
 }
 
-// Fetches concert information from Bands in Town - first, artist name from search term and then concert information
+// Fetches concert information from Bands in Town
 function concertThis(artist) {
     let queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/?app_id=codingbootcamp';
 
-    axios.get(queryUrl)
-        .then(function (response) {
-            let artistName = response.data.name;
+    axiosGet(queryUrl, getArtist);
+}
 
-            if (artistName === undefined) {
-                console.log('Your concert-this request could not find ' + artist + '.');
-            }
-            else {
-                queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/events/?app_id=codingbootcamp';
+// Fetches artist to confirm artist exists (allows partial matches), prints artist name if found in the query
+function getArtist(response) {
+    let artistName = response.data.name;
 
-                axios.get(queryUrl)
-                    .then(function (response) {
-                        if (response.data.length > 0) {
-                            console.log('Your concert-this results for ' + artist + ':');
+    if (artistName === undefined) {
+        console.log('\nLiri could not find this artist.');
+    }
+    else {
+        let queryUrl = 'https://rest.bandsintown.com/artists/' + artistName + '/events/?app_id=codingbootcamp';
 
-                            response.data.forEach(element => {
-                                console.log('\nArtist: ' + artistName);
-                                console.log('Venue: ' + element.venue.name);
-                                console.log('Location: ' + element.venue.city + ', ' + element.venue.region);
-                                console.log('Date: ' + moment(element.datetime).format('MM/DD/YYYY'));
-                            });
-                        }
-                        else {
-                            console.log('Your concert-this request could not find events for ' + artistName + '.');
-                        }
-                    })
-                    .catch(function (error) {
-                        console.log('Your concert-this request could not be completed. ' + error);
-                    });
-            }
-        })
-        .catch(function (error) {
-            console.log('Your concert-this request could not be completed. ' + error);
+        axiosGet(queryUrl, printConcert, { artist: artistName });
+    }
+}
+
+// Prints concert information to console
+function printConcert(response, params) {
+    if (response.data.length > 0) {
+        response.data.forEach(element => {
+            console.log('\nArtist: ' + params.artist);
+            console.log('Venue: ' + element.venue.name);
+            console.log('Location: ' + element.venue.city + ', ' + element.venue.region);
+            console.log('Date: ' + moment(element.datetime).format('MM/DD/YYYY'));
         });
+    }
+    else {
+        console.log('\nLiri could not find any concerts.');
+    }
 }
 
 // Fetches movie information from OMDB
 function movieThis(movie) {
     let queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&plot=full&apikey=' + omdb.apiKey;
 
-    axiosGet(queryUrl, printMovie, printMovieError);
+    axiosGet(queryUrl, printMovie);
 
+    // Prints movie information to console
     function printMovie(response) {
-        console.log('Your movie-this results for ' + movie + ':');
         console.log('\nTitle: ' + response.data.Title);
         console.log('Year: ' + response.data.Year);
         console.log('Ratings: ');
@@ -95,20 +91,16 @@ function movieThis(movie) {
         console.log('Plot: ' + response.data.Plot);
         console.log('Actors: ' + response.data.Actors);
     }
-
-    function printMovieError(error) {
-        console.log('Your movie-this request could not be completed. ' + error);
-    }
 }
 
 // GET request using Axios 
-function axiosGet(url, callback, errCallback) {
+function axiosGet(url, callback, params) {
     axios.get(url)
         .then(function (response) {
-            callback(response);
+            callback(response, params);
         })
         .catch(function (error) {
-            errCallback(error);
+            console.log('\nLiri could not complete your request. ' + error);
         });
 }
 
@@ -116,10 +108,8 @@ function axiosGet(url, callback, errCallback) {
 function spotifyThisSong(song) {
     spotify.search({ type: 'track', query: song }, function (err, data) {
         if (err) {
-            return console.log('Your spotify-this-song request could not be completed. ' + err);
+            return console.log('\nYour spotify-this-song request could not be completed. ' + err);
         }
-
-        console.log('Your spotify-this-song results for ' + song + ':');
 
         data.tracks.items.forEach(track => {
 
@@ -133,7 +123,7 @@ function spotifyThisSong(song) {
                 }
             });
 
-            console.log('\nArtist(s): ' + artists);
+            console.log('Artist(s): ' + artists);
             console.log('Song: ' + track.name);
             console.log('Album: ' + track.album.name);
             console.log('Url: ' + track.external_urls.spotify);
