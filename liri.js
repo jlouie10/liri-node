@@ -69,44 +69,6 @@ function concertThis(artist) {
         });
 }
 
-// Fetches movie information from OMDB
-function movieThis(movie) {
-    let queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&plot=full&apikey=' + omdb.apiKey;
-
-    axiosGet(queryUrl, printMovie, printMovieError);
-
-    function printMovie(response) {
-        console.log('Your movie-this results for ' + movie + ':');
-        console.log('\nTitle: ' + response.data.Title);
-        console.log('Year: ' + response.data.Year);
-        console.log('Ratings: ');
-
-        response.data.Ratings.forEach(element => {
-            if (element.Source === 'Internet Movie Database') {
-                console.log('  IMDB: ' + element.Value);
-            }
-            else if (element.Source === 'Rotten Tomatoes') {
-                console.log('  Rotten Tomatoes: ' + element.Value);
-            }
-        });
-    }
-
-    function printMovieError(error) {
-        console.log('Your movie-this request could not be completed. ' + error);
-    }
-}
-
-// GET request using Axios 
-function axiosGet(url, callback, errCallback) {
-    axios.get(url)
-        .then(function (response) {
-            callback(response);
-        })
-        .catch(function (error) {
-            errCallback(error);
-        });
-}
-
 // Fetches song information from Spotify
 function spotifyThisSong(song) {
     spotify.search({ type: 'track', query: song }, function (err, data) {
@@ -134,4 +96,34 @@ function spotifyThisSong(song) {
             console.log('Url: ' + track.external_urls.spotify);
         });
     });
+}
+
+// Fetches movie information from OMDB
+function movieThis(movie) {
+    let queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&plot=full&apikey=' + omdb.apiKey;
+
+    axios.get(queryUrl)
+        .then(function (response) {
+            console.log('Your movie-this results for ' + movie + ':');
+            console.log('\nTitle: ' + response.data.Title);
+            console.log('Year: ' + response.data.Year);
+            console.log('Ratings: ');
+            
+            response.data.Ratings.forEach(element => {
+                if (element.Source === 'Internet Movie Database') {
+                    console.log('  IMDB: ' + element.Value);
+                }
+                else if (element.Source === 'Rotten Tomatoes') {
+                    console.log('  Rotten Tomatoes: ' + element.Value);
+                }
+            });
+
+            console.log('Country: ' + response.data.Country);
+            console.log('Language: ' + response.data.Language);
+            console.log('Plot: ' + response.data.Plot);
+            console.log('Actors: ' + response.data.Actors);
+        })
+        .catch(function (error) {
+            console.log('Your movie-this request could not be completed. ' + error);
+        });
 }
