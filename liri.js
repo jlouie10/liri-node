@@ -17,7 +17,13 @@ let search = input.slice(3).join(' ');
 let askLiri = (cmd, searchTerm) => {
     switch (cmd) {
         case 'concert-this':
-            concertThis(searchTerm);
+            if (searchTerm === '') {
+                console.log('\nLiri has no artist to complete your search.\n')
+            }
+            else {
+                concertThis(searchTerm);
+            }
+            
             break;
         case 'spotify-this-song':
             spotifyThisSong(searchTerm);
@@ -114,7 +120,7 @@ let axiosGet = (url, callback, params) => {
 let spotifyThisSong = (song) => {
     spotify.search({ type: 'track', query: song }, function (err, data) {
         if (err) {
-            return console.log('\nYour spotify-this-song request could not be completed. ' + err + '\n');
+            return console.log('\nniri could not complete your request. ' + err + '\n');
         }
 
         console.log('_\n')
