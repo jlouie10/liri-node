@@ -78,6 +78,10 @@ let printConcert = (response, params) => {
 
 // Fetches movie information from OMDB
 let movieThis = (movie) => {
+    if (movie === '') {
+        movie = 'Mr. Nobody';
+    }
+
     let queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&plot=full&apikey=' + omdb.apiKey;
 
     axiosGet(queryUrl, printMovie);
@@ -108,7 +112,6 @@ let printMovie = (response) => {
 let axiosGet = (url, callback, params) => {
     axios.get(url)
         .then(function (response) {
-            console.log(response);
             callback(response, params);
         })
         .catch(function (error) {
