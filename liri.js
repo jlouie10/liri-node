@@ -19,8 +19,12 @@ let input = process.argv;
 let command = input[2];
 let search = input.slice(3).join(' ');
 
+let featureLogTxt = true;
+
 // Runs function associated with user input command
 let askLiri = (cmd, searchTerm) => {
+    updateLog('# ' + cmd + ': ' + searchTerm + '\n');
+
     switch (cmd) {
         case 'concert-this':
             concertThis(searchTerm);
@@ -71,10 +75,14 @@ let printConcert = (response, params) => {
         console.log('_\n')
 
         response.data.forEach(element => {
-            console.log('Artist: ' + colors.cyan, params.artist);
-            console.log('Venue: ' + colors.cyan, element.venue.name);
-            console.log('Location: ' + colors.cyan, element.venue.city + ', ' + element.venue.region);
-            console.log('Date: ' + colors.cyan, moment(element.datetime).format('MM/DD/YYYY') + '\n');
+            let info = 'Artist: ' + params.artist +
+                '\nVenue: ' + element.venue.name +
+                '\nLocation: ' + element.venue.city + ', ' + element.venue.region +
+                '\nDate: ' + moment(element.datetime).format('MM/DD/YYYY') + '\n';
+
+            updateLog(info);
+
+            console.log(colors.cyan, info);
         });
     }
     else {
@@ -95,23 +103,28 @@ let movieThis = (movie) => {
 
 // Prints movie information to console
 let printMovie = (response) => {
-    console.log('\nTitle: ' + colors.yellow, response.data.Title);
-    console.log('Year: ' + colors.yellow, response.data.Year);
-    console.log('Ratings: ');
+    let info = 'Title: ' + response.data.Title +
+        '\nYear: ' + response.data.Year +
+        '\nRatings: ';
 
     response.data.Ratings.forEach(element => {
         if (element.Source === 'Internet Movie Database') {
-            console.log('  IMDB: ' + colors.yellow, element.Value);
+            info += '\n  IMDB: ' + element.Value;
         }
         else if (element.Source === 'Rotten Tomatoes') {
-            console.log('  Rotten Tomatoes: ' + colors.yellow, element.Value);
+            info += '\n  Rotten Tomatoes: ' + element.Value;
         }
     });
 
-    console.log('Country: ' + colors.yellow, response.data.Country);
-    console.log('Language: ' + colors.yellow, response.data.Language);
-    console.log('Plot: ' + colors.yellow, response.data.Plot);
-    console.log('Actors: ' + colors.yellow, response.data.Actors + '\n');
+    info += '\nCountry: ' + response.data.Country +
+        '\nLanguage: ' + response.data.Language +
+        '\nPlot: ' + response.data.Plot +
+        '\nActors: ' + response.data.Actors + '\n';
+
+    updateLog(info);
+
+    console.log('_\n')
+    console.log(colors.yellow, info);
 };
 
 // GET request using Axios 
@@ -142,8 +155,8 @@ let spotifyThisSong = (song) => {
         console.log('_\n')
 
         data.tracks.items.forEach(track => {
-
             let artists = '';
+            let info;
 
             track.artists.forEach((item, index, arr) => {
                 artists += item.name;
@@ -153,10 +166,14 @@ let spotifyThisSong = (song) => {
                 }
             });
 
-            console.log('Artist(s): ' + colors.green, artists);
-            console.log('Song: ' + colors.green, track.name);
-            console.log('Album: ' + colors.green, track.album.name);
-            console.log('Url: ' + colors.green, track.external_urls.spotify + '\n');
+            info = 'Artist(s): ' + artists +
+                '\nSong: ' + track.name +
+                '\nAlbum: ' + track.album.name +
+                '\nUrl: ' + track.external_urls.spotify + '\n';
+
+            updateLog(info);
+
+            console.log(colors.green, info);
         });
     });
 };
@@ -165,7 +182,7 @@ let spotifyThisSong = (song) => {
 let doWhatItSays = () => {
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
-            return console.log('\nLiri could not complete your request.' + error);
+            return console.log('\nLiri could not complete your request. ' + error + '\n');
         }
 
         let dataArr = data.split(",");
@@ -173,5 +190,13 @@ let doWhatItSays = () => {
         askLiri(dataArr[0], dataArr[1]);
     });
 };
+
+let updateLog = (logText) => {
+    fs.appendFile('log.txt', logText + '\n', function (err) {
+        if (err) {
+            console.log('\nLiri failed to log the results. ' + err + '\n');
+        }
+    });
+}
 
 askLiri(command, search);
