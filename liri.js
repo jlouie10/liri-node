@@ -17,13 +17,7 @@ let search = input.slice(3).join(' ');
 let askLiri = (cmd, searchTerm) => {
     switch (cmd) {
         case 'concert-this':
-            if (searchTerm === '') {
-                console.log('\nLiri has no artist to complete your search.\n')
-            }
-            else {
-                concertThis(searchTerm);
-            }
-            
+            concertThis(searchTerm);
             break;
         case 'spotify-this-song':
             spotifyThisSong(searchTerm);
@@ -41,9 +35,14 @@ let askLiri = (cmd, searchTerm) => {
 
 // Fetches concert information from Bands in Town
 let concertThis = (artist) => {
-    let queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/?app_id=codingbootcamp';
+    if (artist === '') {
+        console.log('\nLiri needs an artist to complete your search.\n')
+    }
+    else {
+        let queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/?app_id=codingbootcamp';
 
-    axiosGet(queryUrl, getArtist);
+        axiosGet(queryUrl, getArtist);
+    }
 };
 
 // Fetches artist to confirm artist exists (allows partial matches), prints artist name if found in the query
@@ -109,6 +108,7 @@ let printMovie = (response) => {
 let axiosGet = (url, callback, params) => {
     axios.get(url)
         .then(function (response) {
+            console.log(response);
             callback(response, params);
         })
         .catch(function (error) {
@@ -118,7 +118,14 @@ let axiosGet = (url, callback, params) => {
 
 // Fetches song information from Spotify
 let spotifyThisSong = (song) => {
-    spotify.search({ type: 'track', query: song }, function (err, data) {
+    let results = 0;
+
+    if (song === '') {
+        song = 'The Sign Ace of Base';
+        results = 1;
+    }
+
+    spotify.search({ type: 'track', query: song, limit: results }, function (err, data) {
         if (err) {
             return console.log('\nniri could not complete your request. ' + err + '\n');
         }
