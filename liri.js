@@ -5,6 +5,12 @@ const moment = require('moment');
 const axios = require('axios');
 const fs = require('fs');
 
+const colors = {
+    cyan: '\x1b[36m%s\x1b[0m',
+    yellow: '\x1b[33m%s\x1b[0m',
+    green: '\x1b[32m%s\x1b[0m'
+}
+
 let keys = require('./keys.js');
 let spotify = new Spotify(keys.spotify);
 let omdb = keys.omdb;
@@ -65,10 +71,10 @@ let printConcert = (response, params) => {
         console.log('_\n')
 
         response.data.forEach(element => {
-            console.log('Artist: ' + params.artist);
-            console.log('Venue: ' + element.venue.name);
-            console.log('Location: ' + element.venue.city + ', ' + element.venue.region);
-            console.log('Date: ' + moment(element.datetime).format('MM/DD/YYYY') + '\n');
+            console.log('Artist: ' + colors.cyan, params.artist);
+            console.log('Venue: ' + colors.cyan, element.venue.name);
+            console.log('Location: ' + colors.cyan, element.venue.city + ', ' + element.venue.region);
+            console.log('Date: ' + colors.cyan, moment(element.datetime).format('MM/DD/YYYY') + '\n');
         });
     }
     else {
@@ -89,23 +95,23 @@ let movieThis = (movie) => {
 
 // Prints movie information to console
 let printMovie = (response) => {
-    console.log('\nTitle: ' + response.data.Title);
-    console.log('Year: ' + response.data.Year);
+    console.log('\nTitle: ' + colors.yellow, response.data.Title);
+    console.log('Year: ' + colors.yellow, response.data.Year);
     console.log('Ratings: ');
 
     response.data.Ratings.forEach(element => {
         if (element.Source === 'Internet Movie Database') {
-            console.log('  IMDB: ' + element.Value);
+            console.log('  IMDB: ' + colors.yellow, element.Value);
         }
         else if (element.Source === 'Rotten Tomatoes') {
-            console.log('  Rotten Tomatoes: ' + element.Value);
+            console.log('  Rotten Tomatoes: ' + colors.yellow, element.Value);
         }
     });
 
-    console.log('Country: ' + response.data.Country);
-    console.log('Language: ' + response.data.Language);
-    console.log('Plot: ' + response.data.Plot);
-    console.log('Actors: ' + response.data.Actors + '\n');
+    console.log('Country: ' + colors.yellow, response.data.Country);
+    console.log('Language: ' + colors.yellow, response.data.Language);
+    console.log('Plot: ' + colors.yellow, response.data.Plot);
+    console.log('Actors: ' + colors.yellow, response.data.Actors + '\n');
 };
 
 // GET request using Axios 
@@ -147,10 +153,10 @@ let spotifyThisSong = (song) => {
                 }
             });
 
-            console.log('Artist(s): ' + artists);
-            console.log('Song: ' + track.name);
-            console.log('Album: ' + track.album.name);
-            console.log('Url: ' + track.external_urls.spotify + '\n');
+            console.log('Artist(s): ' + colors.green, artists);
+            console.log('Song: ' + colors.green, track.name);
+            console.log('Album: ' + colors.green, track.album.name);
+            console.log('Url: ' + colors.green, track.external_urls.spotify + '\n');
         });
     });
 };
