@@ -19,8 +19,6 @@ let input = process.argv;
 let command = input[2];
 let search = input.slice(3).join(' ');
 
-let featureLogTxt = true;
-
 // Runs function associated with user input command
 let askLiri = (cmd, searchTerm) => {
     updateLog('# ' + cmd + ': ' + searchTerm + '\n');
