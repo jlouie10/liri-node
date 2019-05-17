@@ -37,7 +37,7 @@ let askLiri = (cmd, searchTerm) => {
             doWhatItSays();
             break;
         default:
-            console.log('Error');
+            printInstructions();
     }
 }
 
@@ -195,6 +195,16 @@ let updateLog = (logText) => {
             console.log('\nLiri failed to log the results. ' + err + '\n');
         }
     });
-}
+};
+
+let printInstructions = () => {
+    const instructions = '\nLiri needs one of these commands to display some information:' +
+        '\n  concert-this' +
+        '\n  spotify-this-song' +
+        '\n  movie-this' +
+        '\n  do-what-it-says\n';
+
+    console.log(instructions)
+};
 
 askLiri(command, search);
