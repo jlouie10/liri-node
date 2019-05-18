@@ -82,6 +82,10 @@ Liri will return a response like this:
 
 The log.txt file contains a history of all requests and their output. 
 
+## Bugs
+
+* when random.txt contains `do-what-it-says`, Liri will get stuck in an infinite loop
+
 ## Technologies Used
 
 * Node.js
