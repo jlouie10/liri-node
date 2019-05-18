@@ -42,7 +42,7 @@ node liri.js concert-this <artist name>`
 
 Liri will return a response like this:
 
-![screenshot](examples/concert_this_taylor.png)
+![concert-this](examples/concert_this_taylor.gif)
 
 By invoking `concert-this`, Liri, first, makes a `GET` request to the `/artists` endpoint of the Bands in Town API to verify the input. This allows Liri to search for partial matches and respond with the name of the artist that was returned in the match. If the API response contains at least a partial match, Liri will make a second `GET` request using the `/events` endpoint to fetch events associated with the artist.
 
@@ -54,7 +54,7 @@ The `spotify-this-song` command will search for a song and return information ab
 
 Liri will return a response like this:
 
-![screenshot](examples/spotify_this_jlh.png)
+![spotify-this-song](examples/spotify_this_song_jlh.gif)
 
 ## movie-this
 
@@ -64,7 +64,7 @@ The `movie-this` command will search for a movie and return information about th
 
 Liri will return a response like this:
 
-![screenshot](examples/movie_this_endgame.png)
+![movie-this](examples/movie_this_endgame.gif)
 
 When Liri fetches a movie, it will parse the movie's ratings for IMDB and Rotten Tomatoes ratings.
 
@@ -76,7 +76,7 @@ The `do-what-it-says` command will read the `random.txt` file and perform the re
 
 Liri will return a response like this:
 
-![screenshot](examples/do_what_it_says.png)
+![do-what-it-says](examples/do_what_it_says.gif)
 
 ## log.txt
 
@@ -101,7 +101,7 @@ The log.txt file contains a history of all requests and their output.
 
 ### concert-this partial match
 
-* executing
+* executing this:
 
     ```
     node liri.js concert-this tailor swift
