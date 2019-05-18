@@ -15,23 +15,23 @@ let keys = require('./keys.js');
 let spotify = new Spotify(keys.spotify);
 let omdb = keys.omdb;
 
-let input = process.argv;
-let command = input[2];
-let search = input.slice(3).join(' ');
+let request = process.argv;
+let command = request[2];
+let input = request.slice(3).join(' ');
 
-// Runs function associated with user input command
-let askLiri = (cmd, searchTerm) => {
-    updateLog('# ' + cmd + ': ' + searchTerm + '\n');
+// Executes function based on user request
+let askLiri = (commandArg, inputArg) => {
+    updateLog('# ' + commandArg + ': ' + inputArg + '\n');
 
-    switch (cmd) {
+    switch (commandArg) {
         case 'concert-this':
-            concertThis(searchTerm);
+            concertThis(inputArg);
             break;
         case 'spotify-this-song':
-            spotifyThisSong(searchTerm);
+            spotifyThisSong(inputArg);
             break;
         case 'movie-this':
-            movieThis(searchTerm);
+            movieThis(inputArg);
             break;
         case 'do-what-it-says':
             doWhatItSays();
@@ -53,7 +53,7 @@ let concertThis = (artist) => {
     }
 };
 
-// Fetches artist to confirm artist exists (allows partial matches), prints artist name if found in the query
+// Fetches artist to confirm artist exists (allows partial matches)
 let getArtist = (response) => {
     let artistName = response.data.name;
 
@@ -185,6 +185,7 @@ let doWhatItSays = () => {
 
         let dataArr = data.split(",");
 
+        dataArr[1] = dataArr[1].replace(/['"]+/g, '');
         askLiri(dataArr[0], dataArr[1]);
     });
 };
@@ -207,4 +208,4 @@ let printInstructions = () => {
     console.log(instructions)
 };
 
-askLiri(command, search);
+askLiri(command, input);
