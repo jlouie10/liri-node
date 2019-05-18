@@ -1,0 +1,463 @@
+# concert-this: taylor swift
+
+Artist: Taylor Swift
+Venue: iHeartRadio KIIS FM Wango Tango
+Location: Carson, CA
+Date: 06/01/2019
+
+# concert-this: tailor swift
+
+Artist: Taylor Swift
+Venue: iHeartRadio KIIS FM Wango Tango
+Location: Carson, CA
+Date: 06/01/2019
+
+# concert-this: gary clark jr
+
+Artist: Gary Clark Jr.
+Venue: Sandia Casino Amphitheater
+Location: Albuquerque, NM
+Date: 05/18/2019
+
+Artist: Gary Clark Jr.
+Venue: Astra Kulturhaus
+Location: Berlin, 
+Date: 06/13/2019
+
+Artist: Gary Clark Jr.
+Venue: Grosse Freiheit 36
+Location: Hamburg, 
+Date: 06/14/2019
+
+Artist: Gary Clark Jr.
+Venue: Roundhouse
+Location: London, 
+Date: 06/17/2019
+
+Artist: Gary Clark Jr.
+Venue: Albert Hall
+Location: Manchester, 
+Date: 06/18/2019
+
+Artist: Gary Clark Jr.
+Venue: DE ROMA
+Location: Borgerhout, 
+Date: 06/21/2019
+
+Artist: Gary Clark Jr.
+Venue: Cigale
+Location: Paris, 
+Date: 06/22/2019
+
+Artist: Gary Clark Jr.
+Venue: Casa del Jazz
+Location: Rome Rm, 
+Date: 06/25/2019
+
+Artist: Gary Clark Jr.
+Venue: Les Docks
+Location: Lausanne, 
+Date: 06/27/2019
+
+Artist: Gary Clark Jr.
+Venue: Jardins Palau Reial Pedralbes
+Location: Barcelona, 
+Date: 06/29/2019
+
+Artist: Gary Clark Jr.
+Venue: The Republik
+Location: Honolulu, HI
+Date: 07/19/2019
+
+Artist: Gary Clark Jr.
+Venue: The Republik
+Location: Honolulu, HI
+Date: 07/20/2019
+
+Artist: Gary Clark Jr.
+Venue: Grant Park
+Location: Chicago, IL
+Date: 08/03/2019
+
+Artist: Gary Clark Jr.
+Venue: Meadow Brook Amphitheatre
+Location: Rochester Hills, MI
+Date: 08/04/2019
+
+Artist: Gary Clark Jr.
+Venue: Farm Bureau Insurance Lawn at White River State Park
+Location: Indianapolis, IN
+Date: 08/06/2019
+
+Artist: Gary Clark Jr.
+Venue: The Stir Cove at Harrahs
+Location: Council Bluffs, IA
+Date: 08/08/2019
+
+Artist: Gary Clark Jr.
+Venue: Surly Brewing Festival Field
+Location: Minneapolis, MN
+Date: 08/09/2019
+
+Artist: Gary Clark Jr.
+Venue: Keeneland Association Inc
+Location: Lexington, KY
+Date: 08/10/2019
+
+Artist: Gary Clark Jr.
+Venue: Fabulous Fox
+Location: St Louis, MO
+Date: 08/12/2019
+
+Artist: Gary Clark Jr.
+Venue: Crossroads KC
+Location: Kansas City, MO
+Date: 08/13/2019
+
+Artist: Gary Clark Jr.
+Venue: Highland Brewing Company
+Location: Asheville, NC
+Date: 08/19/2019
+
+Artist: Gary Clark Jr.
+Venue: Charlotte Metro Credit Union Amphitheatre
+Location: Charlotte, NC
+Date: 08/20/2019
+
+Artist: Gary Clark Jr.
+Venue: The National
+Location: Richmond, VA
+Date: 08/23/2019
+
+Artist: Gary Clark Jr.
+Venue: Commodore Barry Park
+Location: Brooklyn, NY
+Date: 08/24/2019
+
+Artist: Gary Clark Jr.
+Venue: Merriweather Post Pavilion
+Location: Columbia, MD
+Date: 08/25/2019
+
+Artist: Gary Clark Jr.
+Venue: Red Rocks Amphitheatre
+Location: Morrison, CO
+Date: 09/04/2019
+
+Artist: Gary Clark Jr.
+Venue: Gerald R Ford Amphitheater
+Location: Vail, CO
+Date: 09/05/2019
+
+Artist: Gary Clark Jr.
+Venue: Red Butte Garden
+Location: Salt Lake City, UT
+Date: 09/06/2019
+
+Artist: Gary Clark Jr.
+Venue: KettleHouse Amphitheater
+Location: Bonner, MT
+Date: 09/08/2019
+
+Artist: Gary Clark Jr.
+Venue: PNE Forum
+Location: Vancouver, 
+Date: 09/10/2019
+
+Artist: Gary Clark Jr.
+Venue: Chateau Ste. Michelle Winery
+Location: Woodinville, WA
+Date: 09/11/2019
+
+Artist: Gary Clark Jr.
+Venue: McMenamins Historic Edgefield Amphitheater
+Location: Troutdale, OR
+Date: 09/13/2019
+
+Artist: Gary Clark Jr.
+Venue: Les Schwab Amphitheater
+Location: Bend, OR
+Date: 09/14/2019
+
+Artist: Gary Clark Jr.
+Venue: Grand Sierra Resort and Casino
+Location: Reno, NV
+Date: 09/15/2019
+
+Artist: Gary Clark Jr.
+Venue: Belly Up
+Location: Aspen, CO
+Date: 09/17/2019
+
+Artist: Gary Clark Jr.
+Venue: Comerica Theatre
+Location: Phoenix, AZ
+Date: 09/24/2019
+
+Artist: Gary Clark Jr.
+Venue: Santa Barbara Bowl
+Location: Santa Barbara, CA
+Date: 09/27/2019
+
+Artist: Gary Clark Jr.
+Venue: Hollywood Bowl
+Location: Los Angeles, CA
+Date: 09/29/2019
+
+Artist: Gary Clark Jr.
+Venue: Zilker Metropolitan Park
+Location: Austin, TX
+Date: 10/11/2019
+
+Artist: Gary Clark Jr.
+Venue: Napa Valley Expo
+Location: Napa, CA
+Date: 05/25/2019
+
+Artist: Gary Clark Jr.
+Venue: Harrahs Resort SoCal The Events Center
+Location: Valley Center, CA
+Date: 05/22/2019
+
+Artist: Gary Clark Jr.
+Venue: JaM Cellars
+Location: Napa, CA
+Date: 05/24/2019
+
+# spotify-this-song: just like heaven
+
+Artist(s): The Cure
+Song: Just Like Heaven
+Album: Kiss Me, Kiss Me, Kiss Me
+Url: https://open.spotify.com/track/76GlO5H5RT6g7y0gev86Nk
+
+Artist(s): The Infamous Stringdusters
+Song: Just Like Heaven
+Album: Undercover, Vol. 2
+Url: https://open.spotify.com/track/1KtLPKFufgNdiG8enc2TrZ
+
+Artist(s): Kat Edmonson
+Song: Just Like Heaven
+Album: Take To The Sky
+Url: https://open.spotify.com/track/1cfxSquzIuVUXxG7yfUmwF
+
+Artist(s): The Infamous Stringdusters
+Song: Just Like Heaven
+Album: Just Like Heaven
+Url: https://open.spotify.com/track/0VWLyUPivk937OzZC4KjZA
+
+Artist(s): The Cure
+Song: Just Like Heaven
+Album: Greatest Hits
+Url: https://open.spotify.com/track/7GDJJCend2BcopbYNw5X9R
+
+Artist(s): Katie Melua
+Song: Just Like Heaven
+Album: Piece By Piece
+Url: https://open.spotify.com/track/2tHj8vYlXs8bpqeaHHqUAZ
+
+Artist(s): Goldfinger
+Song: Just Like Heaven
+Album: The Best Of Goldfinger
+Url: https://open.spotify.com/track/7kNRVuaF6QmLGuhjhQhbgd
+
+Artist(s): The Cure
+Song: Just Like Heaven
+Album: Galore
+Url: https://open.spotify.com/track/5p4pTSor9Y8Pm18sUTl3mi
+
+Artist(s): Katie Melua
+Song: Just Like Heaven
+Album: Piece by Piece
+Url: https://open.spotify.com/track/5vgPGHQJ0HQ8wyuezGpeXp
+
+Artist(s): Vincenzo, Minako
+Song: Just Like Heaven
+Album: The Vanishing Years
+Url: https://open.spotify.com/track/03lqvDgdBKvrq3mGztwU93
+
+Artist(s): Rockabye Baby!
+Song: Just Like Heaven
+Album: Lullaby Renditions of the Cure
+Url: https://open.spotify.com/track/4UzXNnMuJxEwbq7fUltTBY
+
+Artist(s): Antonio Jackson
+Song: Just Like Heaven
+Album: Just Like Heaven
+Url: https://open.spotify.com/track/1OhVVFCQ7jRfgHC89GA0cy
+
+Artist(s): The Watson Twins
+Song: Just Like Heaven
+Album: Fire Songs
+Url: https://open.spotify.com/track/6HSwdJ6rsfBkUnz6BEsxLN
+
+Artist(s): Goldfinger
+Song: Just Like Heaven
+Album: Darrin's Coconut Ass: Live
+Url: https://open.spotify.com/track/2r8bZZFqSsiY9j6x1MhODS
+
+Artist(s): The Cure
+Song: Just Like Heaven - Dizzy Mix 1990
+Album: Mixed Up (Deluxe Edition)
+Url: https://open.spotify.com/track/7aW6Xdp6a7QgnQCZ1Ec2Xz
+
+Artist(s): The Cure
+Song: Just Like Heaven - 45 Version
+Album: Just Like Heaven / Breathe [Digital 45]
+Url: https://open.spotify.com/track/5I2EthKpXxIDSkfqCmRHUd
+
+Artist(s): Scott Bradlee's Postmodern Jukebox, Natalie Angst
+Song: Just Like Heaven
+Album: PMJ And Chill
+Url: https://open.spotify.com/track/4xKs9XgPGr3zcgR6inFTRD
+
+Artist(s): The Cure
+Song: Just Like Heaven - 2006 Remaster
+Album: Kiss Me Kiss Me Kiss Me
+Url: https://open.spotify.com/track/1KSkVwl54ghzE1jSbsVNBr
+
+Artist(s): Dinosaur Jr.
+Song: Just Like Heaven
+Album: You're Living All Over Me
+Url: https://open.spotify.com/track/2taiFEr466TWMGPZN719m5
+
+Artist(s): Keyshia Cole
+Song: Heaven Sent
+Album: Just Like You
+Url: https://open.spotify.com/track/2E90KUsor4U2abOJGFKtfx
+
+# spotify-this-song: 
+
+Artist(s): Ace of Base
+Song: The Sign
+Album: The Sign (US Album) [Remastered]
+Url: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+
+# movie-this: avengers endgame
+
+Title: Avengers: Endgame
+Year: 2019
+Ratings: 
+  IMDB: 8.9/10
+  Rotten Tomatoes: 95%
+Country: USA
+Language: English, Japanese, Xhosa
+Plot: After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe.
+Actors: Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
+
+# movie-this: 
+
+Title: Mr. Nobody
+Year: 2009
+Ratings: 
+  IMDB: 7.8/10
+  Rotten Tomatoes: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: In the year 2092, one hundred eighteen year old Nemo is recounting his life story to a reporter. He is less than clear, often times thinking that he is only thirty-four years of age. But his story becomes more confusing after he does focus on the fact of his current real age. He tells of his life at three primary points in his life: at age nine (when his parents divorced), age sixteen and age thirty-four. The confusing aspect of the story is that he tells of alternate life paths, often changing course with the flick of a decision at each of those ages. One life path has him ultimately married to Elise, a depressed woman who never got over the unrequited love she had for a guy named Stefano when she was a teenager and who asked Nemo to swear that when she died he would sprinkle her ashes on Mars. A second life path has him married to Jean. Their life is one of luxury but one also of utter boredom. And a third life path has him in a torrid romance with his step-sister Anna, the two who, as adults, would search for each other after having been torn apart as teenagers. These life paths also intersect, with the three women sometimes entering the alternate life in some other aspect. Are any of these lives real or are they all a figment of his imagination?
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+# do-what-it-says: 
+
+# spotify-this-song: "I Want it That Way"
+
+Artist(s): Backstreet Boys
+Song: I Want It That Way
+Album: The Hits--Chapter One
+Url: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+
+Artist(s): Mick Jensen
+Song: I Want It That Way
+Album: I Want It That Way
+Url: https://open.spotify.com/track/0ympGdYdVlZ8zo6irdjMvd
+
+Artist(s): Jess and Gabriel
+Song: I Want It That Way
+Album: Under the Covers, Vol. 3
+Url: https://open.spotify.com/track/52FgeDoHydoWZbFGgxwCdH
+
+Artist(s): Tyler and Mark
+Song: I Want It That Way
+Album: Beautiful Dreams
+Url: https://open.spotify.com/track/7k52T0b1v9ktm2gJwlO5yy
+
+Artist(s): "Weird Al" Yankovic
+Song: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
+Album: Poodle Hat
+Url: https://open.spotify.com/track/4vHb50VkxDzHYwLiHfWczK
+
+Artist(s): Backstreet Boys
+Song: I Want It That Way
+Album: 90 Sweet 90s Hits!
+Url: https://open.spotify.com/track/1zCiqxhampG4dcC7HEqPu5
+
+Artist(s): Backstreet Boys
+Song: I Want It That Way
+Album: NKOTBSB
+Url: https://open.spotify.com/track/2KMwtsWwL5QDtSpm814tju
+
+Artist(s): Steel Panther
+Song: I Want It That Way
+Album: I Want It That Way
+Url: https://open.spotify.com/track/0448cNUvZGCAlUpIPO5kdY
+
+Artist(s): Backstreet Boys
+Song: I Want It That Way
+Album: Millennium
+Url: https://open.spotify.com/track/47BBI51FKFwOMlIiX6m8ya
+
+Artist(s): Boyce Avenue
+Song: I Want It That Way
+Album: Cover Sessions, Vol. 2
+Url: https://open.spotify.com/track/16COzZ7jCVn3O8b8ZgviOx
+
+Artist(s): Manuel Costa
+Song: I Want It That Way
+Album: I Want It That Way
+Url: https://open.spotify.com/track/4Sp4RxkWukxqJykl0ySNQi
+
+Artist(s): Glee Cast
+Song: Bye Bye Bye / I Want It That Way (Glee Cast Version)
+Album: Bye Bye Bye / I Want It That Way (Glee Cast Version)
+Url: https://open.spotify.com/track/3t7m7AzV2ntuI9fIT6KREP
+
+Artist(s): Scary Pockets, Casey Abrams
+Song: I Want It That Way
+Album: Nu Funk
+Url: https://open.spotify.com/track/4IWQXV01Lp0wsXCXo09EBr
+
+Artist(s): Yshop
+Song: I Want It That Way
+Album: I Want It That Way
+Url: https://open.spotify.com/track/0sRt44NXdLVqYeD2TAm1A5
+
+Artist(s): Dynamite Boy
+Song: I Want It That Way
+Album: Punk Goes Pop
+Url: https://open.spotify.com/track/0X5ygHsca3pJ3KErPsXhGc
+
+Artist(s): Love Hits On Piano
+Song: I Want It That Way
+Album: Timeless Love
+Url: https://open.spotify.com/track/6o4G9XVj3ikl0W1BNUlH4u
+
+Artist(s): "Weird Al" Yankovic
+Song: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
+Album: The Essential "Weird Al" Yankovic
+Url: https://open.spotify.com/track/1vaico2C72imYowF4Kv04V
+
+Artist(s): Scott Bradlee's Postmodern Jukebox, Shoshana Bean
+Song: I Want It That Way
+Album: Selfies on Kodachrome
+Url: https://open.spotify.com/track/1Le3uYU5NU9cXXtYeSWnEM
+
+Artist(s): Anthem Lights
+Song: I Want It That Way
+Album: Covers Part IV
+Url: https://open.spotify.com/track/3Ww6kEWxLh4Ub4WPJ9hMtA
+
+Artist(s): Backstreet Boys
+Song: I Want It That Way - Reimagined
+Album: I Want It That Way (Reimagined)
+Url: https://open.spotify.com/track/62KnDRUq6CBcT7Bqb9IHKV
+
