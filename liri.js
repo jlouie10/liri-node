@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const Spotify = require('node-spotify-api');
 const moment = require('moment');
-const axios = require('axios');
 const fs = require('fs');
 
 const colors = {
@@ -14,6 +13,9 @@ const colors = {
 let keys = require('./keys.js');
 let spotify = new Spotify(keys.spotify);
 let omdb = keys.omdb;
+
+let axios = require('./axios.js');
+let axiosGet = axios.axiosGet;
 
 let request = process.argv;
 let command = request[2];
@@ -125,17 +127,6 @@ let printMovie = (response) => {
     console.log(colors.yellow, info);
 };
 
-// GET request using Axios 
-let axiosGet = (url, callback, params) => {
-    axios.get(url)
-        .then(function (response) {
-            callback(response, params);
-        })
-        .catch(function (error) {
-            console.log('\nLiri could not complete your request. ' + error + '\n');
-        });
-};
-
 // Fetches song information from Spotify
 let spotifyThisSong = (song) => {
     let results = 0;
@@ -209,3 +200,11 @@ let printInstructions = () => {
 };
 
 askLiri(command, input);
+
+module.exports = {
+    command: command,
+    input: input,
+    getArtist: getArtist,
+    printConcert: printConcert,
+    printMovie: printMovie
+  };
