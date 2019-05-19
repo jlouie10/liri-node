@@ -200,11 +200,3 @@ let printInstructions = () => {
 };
 
 askLiri(command, input);
-
-module.exports = {
-    command: command,
-    input: input,
-    getArtist: getArtist,
-    printConcert: printConcert,
-    printMovie: printMovie
-  };
