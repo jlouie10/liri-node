@@ -13,4 +13,4 @@ let axiosGet = (url, callback, params) => {
 
 module.exports = {
     axiosGet: axiosGet
-  };
+};

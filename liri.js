@@ -1,8 +1,10 @@
 require('dotenv').config();
 
 const Spotify = require('node-spotify-api');
+const keys = require('./keys.js');
 const moment = require('moment');
 const fs = require('fs');
+const axios = require('./axios.js');
 
 const colors = {
     cyan: '\x1b[36m%s\x1b[0m',
@@ -10,11 +12,8 @@ const colors = {
     green: '\x1b[32m%s\x1b[0m'
 }
 
-let keys = require('./keys.js');
 let spotify = new Spotify(keys.spotify);
 let omdb = keys.omdb;
-
-let axios = require('./axios.js');
 let axiosGet = axios.axiosGet;
 
 let request = process.argv;
@@ -138,7 +137,7 @@ let spotifyThisSong = (song) => {
 
     spotify.search({ type: 'track', query: song, limit: results }, function (err, data) {
         if (err) {
-            return console.log('\nniri could not complete your request. ' + err + '\n');
+            return console.log('\nLiri could not complete your request. ' + err + '\n');
         }
 
         console.log('_\n')
