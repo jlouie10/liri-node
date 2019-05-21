@@ -49,7 +49,13 @@ let concertThis = (artist) => {
     else {
         let queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/?app_id=codingbootcamp';
 
-        axiosGet(queryUrl, getArtist);
+        axios.get(queryUrl)
+            .then(function (response) {
+                getArtist(response);
+            })
+            .catch(function (error) {
+                console.log('\nLiri could not complete your request. ' + error + '\n');
+            });
     }
 };
 
@@ -63,7 +69,13 @@ let getArtist = (response) => {
     else {
         let queryUrl = 'https://rest.bandsintown.com/artists/' + artistName + '/events/?app_id=codingbootcamp';
 
-        axiosGet(queryUrl, printConcert, { artist: artistName });
+        axios.get(queryUrl)
+            .then(function (response) {
+                printConcert(response, { artist: artistName });
+            })
+            .catch(function (error) {
+                console.log('\nLiri could not complete your request. ' + error + '\n');
+            });
     }
 };
 
@@ -96,7 +108,13 @@ let movieThis = (movie) => {
 
     let queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&plot=full&apikey=' + omdb.apiKey;
 
-    axiosGet(queryUrl, printMovie);
+    axios.get(queryUrl)
+        .then(function (response) {
+            printMovie(response);
+        })
+        .catch(function (error) {
+            console.log('\nLiri could not complete your request. ' + error + '\n');
+        });
 };
 
 // Prints movie information to console
@@ -123,17 +141,6 @@ let printMovie = (response) => {
 
     console.log('_\n')
     console.log(colors.yellow, info);
-};
-
-// GET request using Axios 
-let axiosGet = (url, callback, params) => {
-    axios.get(url)
-        .then(function (response) {
-            callback(response, params);
-        })
-        .catch(function (error) {
-            console.log('\nLiri could not complete your request. ' + error + '\n');
-        });
 };
 
 // Fetches song information from Spotify
