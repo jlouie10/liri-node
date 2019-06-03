@@ -1,5 +1,7 @@
 # Liri
 
+[![Dependency Status](https://david-dm.org/jlouie10/liri-node.svg)](https://david-dm.org/jlouie10/liri-node)
+
 Liri is a _Language_ Interpretation and Recognition Interface. This command line node app takes in parameters and gives you back data.
 
 ## Instructions
