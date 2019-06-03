@@ -1,8 +1,8 @@
 {
   "name": "liri-node",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A command line node app that takes in parameters and gives you back data.",
-  "main": "index.js",
+  "main": "liri.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jlouie10/liri-node#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "dotenv": "^8.0.0",
     "moment": "^2.24.0",
     "node-spotify-api": "^1.1.1"
