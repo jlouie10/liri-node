@@ -145,7 +145,3 @@ The log.txt file contains a history of all requests and their output.
         movie-this
         do-what-it-says
     ```
-
-
-
-

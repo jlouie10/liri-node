@@ -6,7 +6,7 @@ const moment = require('moment');
 const axios = require('axios');
 const fs = require('fs');
 
-const colors = {
+const COLORS = {
     cyan: '\x1b[36m%s\x1b[0m',
     yellow: '\x1b[33m%s\x1b[0m',
     green: '\x1b[32m%s\x1b[0m'
@@ -42,7 +42,7 @@ let askLiri = (commandArg, inputArg) => {
 }
 
 // Fetches concert information from Bands in Town
-let concertThis = (artist) => {
+let concertThis = artist => {
     if (artist === '') {
         console.log('\nLiri needs an artist to complete your search.\n')
     }
@@ -50,17 +50,17 @@ let concertThis = (artist) => {
         let queryUrl = 'https://rest.bandsintown.com/artists/' + artist + '/?app_id=codingbootcamp';
 
         axios.get(queryUrl)
-            .then(function (response) {
+            .then(response => {
                 getArtist(response);
             })
-            .catch(function (error) {
+            .catch(error => {
                 console.log('\nLiri could not complete your request. ' + error + '\n');
             });
     }
 };
 
 // Fetches artist to confirm artist exists (allows partial matches)
-let getArtist = (response) => {
+let getArtist = response => {
     let artistName = response.data.name;
 
     if (artistName === undefined) {
@@ -70,10 +70,10 @@ let getArtist = (response) => {
         let queryUrl = 'https://rest.bandsintown.com/artists/' + artistName + '/events/?app_id=codingbootcamp';
 
         axios.get(queryUrl)
-            .then(function (response) {
+            .then(response => {
                 printConcert(response, { artist: artistName });
             })
-            .catch(function (error) {
+            .catch(error => {
                 console.log('\nLiri could not complete your request. ' + error + '\n');
             });
     }
@@ -92,7 +92,7 @@ let printConcert = (response, params) => {
 
             updateLog(info);
 
-            console.log(colors.cyan, info);
+            console.log(COLORS.cyan, info);
         });
     }
     else {
@@ -101,7 +101,7 @@ let printConcert = (response, params) => {
 };
 
 // Fetches movie information from OMDB
-let movieThis = (movie) => {
+let movieThis = movie => {
     if (movie === '') {
         movie = 'Mr. Nobody';
     }
@@ -109,16 +109,16 @@ let movieThis = (movie) => {
     let queryUrl = 'http://www.omdbapi.com/?t=' + movie + '&plot=full&apikey=' + omdb.apiKey;
 
     axios.get(queryUrl)
-        .then(function (response) {
+        .then(response => {
             printMovie(response);
         })
-        .catch(function (error) {
+        .catch(error => {
             console.log('\nLiri could not complete your request. ' + error + '\n');
         });
 };
 
 // Prints movie information to console
-let printMovie = (response) => {
+let printMovie = response => {
     let info = 'Title: ' + response.data.Title +
         '\nYear: ' + response.data.Year +
         '\nRatings: ';
@@ -140,11 +140,11 @@ let printMovie = (response) => {
     updateLog(info);
 
     console.log('_\n')
-    console.log(colors.yellow, info);
+    console.log(COLORS.yellow, info);
 };
 
 // Fetches song information from Spotify
-let spotifyThisSong = (song) => {
+let spotifyThisSong = song => {
     let results = 0;
 
     if (song === '') {
@@ -152,7 +152,7 @@ let spotifyThisSong = (song) => {
         results = 1;
     }
 
-    spotify.search({ type: 'track', query: song, limit: results }, function (err, data) {
+    spotify.search({ type: 'track', query: song, limit: results }, (err, data) => {
         if (err) {
             return console.log('\nLiri could not complete your request. ' + err + '\n');
         }
@@ -178,14 +178,14 @@ let spotifyThisSong = (song) => {
 
             updateLog(info);
 
-            console.log(colors.green, info);
+            console.log(COLORS.green, info);
         });
     });
 };
 
 // Reads random.txt and runs command with search term in file
 let doWhatItSays = () => {
-    fs.readFile("random.txt", "utf8", function (error, data) {
+    fs.readFile("random.txt", "utf8", (error, data) => {
         if (error) {
             return console.log('\nLiri could not complete your request. ' + error + '\n');
         }
@@ -197,8 +197,8 @@ let doWhatItSays = () => {
     });
 };
 
-let updateLog = (logText) => {
-    fs.appendFile('log.txt', logText + '\n', function (err) {
+let updateLog = logText => {
+    fs.appendFile('log.txt', logText + '\n', err => {
         if (err) {
             console.log('\nLiri failed to log the results. ' + err + '\n');
         }
